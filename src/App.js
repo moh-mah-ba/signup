@@ -3,7 +3,8 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
+  NavLink,
+  Redirect
 } from 'react-router-dom';
 import './App.css';
 import SignUp from './components/signup/SignUp';
@@ -15,21 +16,21 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <button>
-          <Link to="/signup">Add New User</Link>
+          <NavLink activeClassName="selected" to="/signupform">Add New User</NavLink>
         </button>
         <button>
-          <Link to="/userlist">Show Users List</Link>
+          <NavLink exact activeClassName="selected" to="/userslist">Show Users List</NavLink>
         </button>
       </div>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            {/* <UsersList /> */}
+            <Redirect  to="/userslist" />
           </Route>
-          <Route path="/userlist">
+          <Route path="/userslist">
             <UsersList />
           </Route>
-          <Route path="/signup">
+          <Route path="/signupform">
             <SignUp />
           </Route>
         </Switch>
