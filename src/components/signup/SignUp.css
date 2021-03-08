@@ -1,0 +1,50 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} */
+.divBody{
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 2%;
+    border: 1px solid #9797975e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 10px rgb(0 0 0 / 4%);
+}
+@media  (max-width: 750px){
+    .divBody{
+        width: 100%;
+        padding: 3% 5%;
+        margin-top: 0;
+        border-radius: 0;
+    }
+}
+.MuiButton-root.Mui-disabled{
+    display: block;
+}
+.textField .MuiFormControl-root{
+    width: 100%;
+    margin: 10px 0;
+    color:#000;
+}
+.textField .MuiFormControl-root .MuiFormLabel-root {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color:#000;
+}
+.MuiFormControlLabel-root .MuiTypography-body1{
+    font-family: 'Montserrat', sans-serif;  
+    color:#000;
+}
+.MuiFormGroup-root{
+    margin-top: 10px;
+}
+.button-style Button{
+    margin: 4% auto;
+    width: 85%;
+    height: 3em;
+}
