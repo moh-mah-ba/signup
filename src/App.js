@@ -9,7 +9,7 @@ import './App.css';
 import SignUp from './components/signup/SignUp';
 import UsersList from './components/userslist/UsersList';
 import UsersDetails from './components/usersdetailspage/UsersDetails'
-
+import Caluclator from './calculator/Calculator'
 
 function App() {
   return (
@@ -19,6 +19,8 @@ function App() {
           <NavLink className="nav-app-link" activeClassName="selected" to="/signupform">Add New User</NavLink>
 
           <NavLink exact className="nav-app-link" activeClassName="selected" to="/userslist">Show Users List</NavLink>
+          
+          <NavLink exact className="nav-app-link" activeClassName="selected" to="/calculator">Calculator</NavLink>
        
       </div>
       <div className="App">
@@ -34,6 +36,9 @@ function App() {
           </Route>
           <Route path='/user/:title'>
             <UsersDetails />
+          </Route>
+          <Route path='/calculator'>
+          <Caluclator />
           </Route>
         </Switch>
       </div>

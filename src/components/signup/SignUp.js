@@ -8,7 +8,7 @@ import {
     RadioGroup,
     FormControlLabel
 } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import axios from 'axios';
 import { Formik } from 'formik';
 import MyTextField from './MyTextField';
@@ -25,6 +25,12 @@ const SignUp =() =>{const history = useHistory();
     } 
 
     const Dispatch = useDispatch();
+
+        const emailValid =(even) => {
+
+            return console.log('emailValid' , even)
+        }
+
 
     return (
         <div className='divBody'>
@@ -47,7 +53,7 @@ const SignUp =() =>{const history = useHistory();
                            
                         }).catch(error => console.log('error here', error))
 
-                    
+                        emailValid(values.email)
 
                 }}
 
@@ -55,7 +61,7 @@ const SignUp =() =>{const history = useHistory();
                 validationSchema={MyValidForm}
 
             >
-                {({ values, handleChange, handleSubmit, errors, dirty, isValid }) => (
+                {({ /* values, */ handleChange, handleSubmit, /* errors, */ dirty, isValid }) => (
                     <form className='textField' onSubmit={handleSubmit}>
                         <h1>Sign Up</h1>
                         <MyTextField
@@ -85,6 +91,7 @@ const SignUp =() =>{const history = useHistory();
                             type='email'
                             id="standard-basic"
                             label="Email"
+                            // onChange={() => emailValid(values)}
                         />
                         <FormControl component="fieldset">
                             <FormLabel component="legend" className='genderFieid'>Gender</FormLabel>

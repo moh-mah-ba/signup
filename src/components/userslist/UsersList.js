@@ -10,10 +10,11 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fitchUserList } from '../redux/fitchUserList';
 import { useStyles } from './UserListStyle';
-import {DETAILS} from '../redux/actionTypes';
+import { DETAILS } from '../redux/actionTypes';
 
-const UsersList =() =>{const dispatch = useDispatch();
-    
+const UsersList = () => {
+    const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fitchUserList())
     }, [dispatch])
@@ -23,23 +24,21 @@ const UsersList =() =>{const dispatch = useDispatch();
     })
 
     const classes = useStyles();
-  
-
 
     const history = useHistory();
 
     const usersDetailsButton = (item) => {
-        
+
         dispatch({
             type: DETAILS,
             payload: item
         })
-        
-        return(history.push(`/user/:${item.first_name} ${item.last_name}`, {from : '/userslist'}) )
+
+        return (history.push(`/user/:${item.first_name} ${item.last_name}`, { from: '/userslist' }))
     }
 
     return (
-        <div className={classes.baisRoot}> 
+        <div className={classes.baisRoot}>
             {users.users.map((item, index) => {
                     return (
                         <Card className={classes.root} key={index}>

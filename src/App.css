@@ -6,6 +6,12 @@
   padding:2% ;
   box-sizing:content-box;
 }
+@media (max-width: 500px){
+  .nav-app{
+    display: grid;
+  grid-template-columns: repeat(3, auto);
+  }
+}
 .nav-app .nav-app-link {
   border: 1px solid #000;
   border-radius: 5px;
